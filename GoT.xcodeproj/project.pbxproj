@@ -16,6 +16,8 @@
 		CF2B98ED1F190E0500041255 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98EC1F190E0500041255 /* Person.swift */; };
 		CF2B98F11F190EB500041255 /* codeIsComing.png in Resources */ = {isa = PBXBuildFile; fileRef = CF2B98EF1F190EB500041255 /* codeIsComing.png */; };
 		CF2B98F21F190EB500041255 /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF2B98F01F190EB500041255 /* lannister.jpg */; };
+		CF2B98F51F19181B00041255 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98F31F19181B00041255 /* HouseViewController.swift */; };
+		CF2B98F61F19181B00041255 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2B98F41F19181B00041255 /* HouseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		CF2B98EC1F190E0500041255 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		CF2B98EF1F190EB500041255 /* codeIsComing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = codeIsComing.png; sourceTree = "<group>"; };
 		CF2B98F01F190EB500041255 /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
+		CF2B98F31F19181B00041255 /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
+		CF2B98F41F19181B00041255 /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				CF2B98EE1F190E1700041255 /* Resources */,
+				CF2B98F71F19182600041255 /* Controllers */,
 				CF2B98E91F190DDB00041255 /* Models */,
 				CF2B98C71F190BF000041255 /* AppDelegate.swift */,
 				CF2B98CE1F190BF000041255 /* Assets.xcassets */,
@@ -119,6 +124,15 @@
 				CF2B98F01F190EB500041255 /* lannister.jpg */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		CF2B98F71F19182600041255 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CF2B98F31F19181B00041255 /* HouseViewController.swift */,
+				CF2B98F41F19181B00041255 /* HouseViewController.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +220,7 @@
 			files = (
 				CF2B98F21F190EB500041255 /* lannister.jpg in Resources */,
 				CF2B98F11F190EB500041255 /* codeIsComing.png in Resources */,
+				CF2B98F61F19181B00041255 /* HouseViewController.xib in Resources */,
 				CF2B98D21F190BF000041255 /* LaunchScreen.storyboard in Resources */,
 				CF2B98CF1F190BF000041255 /* Assets.xcassets in Resources */,
 			);
@@ -228,6 +243,7 @@
 				CF2B98ED1F190E0500041255 /* Person.swift in Sources */,
 				CF2B98EB1F190DF600041255 /* House.swift in Sources */,
 				CF2B98C81F190BF000041255 /* AppDelegate.swift in Sources */,
+				CF2B98F51F19181B00041255 /* HouseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

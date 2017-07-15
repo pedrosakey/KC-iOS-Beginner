@@ -22,11 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.cyan
         
+        // Creamos un modelo
+        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Code is coming!")
         
+        // Creamos el controlador
+        let starkVC = HouseViewController(model: starkHouse)
         
-        // Crear RootVC
-        let rootVC = UIViewController()
-        window?.rootViewController = rootVC
+        // Asignamos el RootVC
+        window?.rootViewController = starkVC
         
         return true
     }
