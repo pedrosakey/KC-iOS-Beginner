@@ -18,6 +18,7 @@
 		CF2B98F21F190EB500041255 /* lannister.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CF2B98F01F190EB500041255 /* lannister.jpg */; };
 		CF2B98F51F19181B00041255 /* HouseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98F31F19181B00041255 /* HouseViewController.swift */; };
 		CF2B98F61F19181B00041255 /* HouseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2B98F41F19181B00041255 /* HouseViewController.xib */; };
+		CF2B98FA1F1AE4DC00041255 /* UIkitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		CF2B98F01F190EB500041255 /* lannister.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lannister.jpg; sourceTree = "<group>"; };
 		CF2B98F31F19181B00041255 /* HouseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HouseViewController.swift; sourceTree = "<group>"; };
 		CF2B98F41F19181B00041255 /* HouseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HouseViewController.xib; sourceTree = "<group>"; };
+		CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIkitExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		CF2B98C61F190BF000041255 /* GoT */ = {
 			isa = PBXGroup;
 			children = (
+				CF2B98F81F1AE45F00041255 /* Cocoa */,
 				CF2B98EE1F190E1700041255 /* Resources */,
 				CF2B98F71F19182600041255 /* Controllers */,
 				CF2B98E91F190DDB00041255 /* Models */,
@@ -133,6 +136,14 @@
 				CF2B98F41F19181B00041255 /* HouseViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		CF2B98F81F1AE45F00041255 /* Cocoa */ = {
+			isa = PBXGroup;
+			children = (
+				CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */,
+			);
+			name = Cocoa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF2B98ED1F190E0500041255 /* Person.swift in Sources */,
+				CF2B98FA1F1AE4DC00041255 /* UIkitExtensions.swift in Sources */,
 				CF2B98EB1F190DF600041255 /* House.swift in Sources */,
 				CF2B98C81F190BF000041255 /* AppDelegate.swift in Sources */,
 				CF2B98F51F19181B00041255 /* HouseViewController.swift in Sources */,
