@@ -9,11 +9,37 @@
 import XCTest
 @testable import GoT
 
-class GoTTests: XCTestCase {
+class HouseTests: XCTestCase {
+    
+    var starkImage: UIImage!
+    var lannisterImage : UIImage!
+    
+    var starkHouse : House!
+    var lannisterHouse : House!
+    
+    var starkSigil : Sigil!
+    var lannisterSigil : Sigil!
+    
+    var robb : Person!
+    var arya : Person!
+    var tyrion : Person!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        starkImage = #imageLiteral(resourceName: "codeIsComing.png")
+        lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
+        
+        starkSigil = Sigil(image: starkImage, description: "Direwolf")
+        lannisterSigil = Sigil(image: lannisterImage, description: "Rampant Lions")
+        
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        
+        robb = Person (name: "Robb", alias: "The young wolf", house:starkHouse)
+        arya = Person (name: "Arya", house: starkHouse)
+        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
+        
     }
     
     override func tearDown() {
@@ -21,16 +47,53 @@ class GoTTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testHouseExistence(){
+        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
+        let stark = House(name:"Stark", sigil: starkSigil, words: "Winter is coming")
+        
+        XCTAssertNotNil(stark)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testSigilExistence(){
+        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
+        XCTAssertNotNil(starkSigil)
+        
+        let lannisterSigil = Sigil(image: #imageLiteral(resourceName: "lannister.jpg"), description: "Rampant Lion")
+        XCTAssertNotNil(lannisterSigil)
+    }
+    
+    func testAddPersons(){
+        XCTAssertEqual(starkHouse.count,0)
+        starkHouse.add(person: robb)
+        
+        XCTAssertEqual(starkHouse.count,1)
+        starkHouse.add(person: arya)
+        
+        XCTAssertEqual(starkHouse.count,2)
+        
+        starkHouse.add(person: tyrion)
+        XCTAssertEqual(starkHouse.count,2)
+    }
+    
+    func testHouseEquality(){
+        
+        //Identidad
+        XCTAssertEqual(starkHouse, starkHouse)
+        
+        //Igualdad
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        XCTAssertEqual(jinxed, starkHouse)
+        
+        //Desigualdad
+        XCTAssertNotEqual(starkHouse, lannisterHouse)
+    }
+    
+    func testHashable() {
+        XCTAssertNotNil(starkHouse.hashValue)
+    }
+    
+    func testHouseComparison(){
+        XCTAssertLessThan(lannisterHouse, starkHouse)
     }
     
 }
