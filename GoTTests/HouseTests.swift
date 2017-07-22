@@ -11,36 +11,17 @@ import XCTest
 
 class HouseTests: XCTestCase {
     
-    var starkImage: UIImage!
-    var lannisterImage : UIImage!
+    let houses = Repository.local.houses
     
     var starkHouse : House!
     var lannisterHouse : House!
     
-    var starkSigil : Sigil!
-    var lannisterSigil : Sigil!
-    
-    var robb : Person!
-    var arya : Person!
-    var tyrion : Person!
-    
+
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        starkImage = #imageLiteral(resourceName: "codeIsComing.png")
-        lannisterImage = #imageLiteral(resourceName: "lannister.jpg")
-        
-        starkSigil = Sigil(image: starkImage, description: "Direwolf")
-        lannisterSigil = Sigil(image: lannisterImage, description: "Rampant Lions")
-        
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
-        
-        robb = Person (name: "Robb", alias: "The young wolf", house:starkHouse)
-        arya = Person (name: "Arya", house: starkHouse)
-        tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
-        
-    }
+        starkHouse = Repository.local.house(named: "Stark")
+        lannisterHouse = Repository.local.house(named: "Lannister")
+        }
     
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -48,10 +29,8 @@ class HouseTests: XCTestCase {
     }
     
     func testHouseExistence(){
-        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        let stark = House(name:"Stark", sigil: starkSigil, words: "Winter is coming")
         
-        XCTAssertNotNil(stark)
+        XCTAssertNotNil(starkHouse)
     }
     
     func testSigilExistence(){
@@ -63,16 +42,9 @@ class HouseTests: XCTestCase {
     }
     
     func testAddPersons(){
-        XCTAssertEqual(starkHouse.count,0)
-        starkHouse.add(person: robb)
-        
-        XCTAssertEqual(starkHouse.count,1)
-        starkHouse.add(person: arya)
-        
         XCTAssertEqual(starkHouse.count,2)
         
-        starkHouse.add(person: tyrion)
-        XCTAssertEqual(starkHouse.count,2)
+        XCTAssertEqual(lannisterHouse.count,2)
     }
     
     func testHouseEquality(){
@@ -81,7 +53,9 @@ class HouseTests: XCTestCase {
         XCTAssertEqual(starkHouse, starkHouse)
         
         //Igualdad
+        let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
         let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        
         XCTAssertEqual(jinxed, starkHouse)
         
         //Desigualdad
@@ -95,5 +69,6 @@ class HouseTests: XCTestCase {
     func testHouseComparison(){
         XCTAssertLessThan(lannisterHouse, starkHouse)
     }
+    
     
 }

@@ -1,6 +1,6 @@
 //
 //  House.swift
-//  Westeros
+//  GoT
 //
 //  Created by Pedro Sánchez Castro on 6/7/17.
 //  Copyright © 2017 Pedro Sánchez Castro. All rights reserved.
@@ -54,7 +54,7 @@ extension House{
 extension House{
     var proxyForEquality : String{
         get{
-            return "\(name) \(words) \(count)"
+            return "\(name) \(words)"
         }
     }
     
