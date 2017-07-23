@@ -24,6 +24,8 @@
 		CF4BB3FE1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */; };
 		CF4BB4011F243358008C0E47 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */; };
 		CF4BB4021F243358008C0E47 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB4001F243358008C0E47 /* WikiViewController.xib */; };
+		CF4BB4091F24D58A008C0E47 /* HousesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BB4071F24D58A008C0E47 /* HousesViewController.swift */; };
+		CF4BB40A1F24D58A008C0E47 /* HousesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB4081F24D58A008C0E47 /* HousesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Casa_Targaryen_estandarte.png; sourceTree = "<group>"; };
 		CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		CF4BB4001F243358008C0E47 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
+		CF4BB4071F24D58A008C0E47 /* HousesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HousesViewController.swift; path = ../HousesViewController.swift; sourceTree = "<group>"; };
+		CF4BB4081F24D58A008C0E47 /* HousesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HousesViewController.xib; path = ../HousesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,8 @@
 		CF2B98F71F19182600041255 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CF4BB4071F24D58A008C0E47 /* HousesViewController.swift */,
+				CF4BB4081F24D58A008C0E47 /* HousesViewController.xib */,
 				CF2B98F31F19181B00041255 /* HouseViewController.swift */,
 				CF2B98F41F19181B00041255 /* HouseViewController.xib */,
 				CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */,
@@ -251,6 +257,7 @@
 				CF2B98F61F19181B00041255 /* HouseViewController.xib in Resources */,
 				CF2B98D21F190BF000041255 /* LaunchScreen.storyboard in Resources */,
 				CF2B98CF1F190BF000041255 /* Assets.xcassets in Resources */,
+				CF4BB40A1F24D58A008C0E47 /* HousesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +278,7 @@
 				CF2B98ED1F190E0500041255 /* Person.swift in Sources */,
 				CF2B98FA1F1AE4DC00041255 /* UIkitExtensions.swift in Sources */,
 				CF2B98EB1F190DF600041255 /* House.swift in Sources */,
+				CF4BB4091F24D58A008C0E47 /* HousesViewController.swift in Sources */,
 				CF2B98C81F190BF000041255 /* AppDelegate.swift in Sources */,
 				CF2B98F51F19181B00041255 /* HouseViewController.swift in Sources */,
 				CF2B99001F1AEA4D00041255 /* Repository.swift in Sources */,
