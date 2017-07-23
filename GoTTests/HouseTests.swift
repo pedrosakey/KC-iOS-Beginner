@@ -16,6 +16,10 @@ class HouseTests: XCTestCase {
     var starkHouse : House!
     var lannisterHouse : House!
     
+    let starkURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
+    let lannisterURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Lannister")!
+    let targaryenURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Targaryen")!
+    
 
     override func setUp() {
         super.setUp()
@@ -54,7 +58,7 @@ class HouseTests: XCTestCase {
         
         //Igualdad
         let starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
-        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!")
+        let jinxed = House(name: "Stark", sigil: starkSigil, words: "Winter is coming!", url: starkURL)
         
         XCTAssertEqual(jinxed, starkHouse)
         

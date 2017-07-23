@@ -10,6 +10,10 @@ import XCTest
 @testable import GoT
 class PersonTest: XCTestCase {
     
+    let starkURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
+    let lannisterURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Lannister")!
+    let targaryenURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Targaryen")!
+    
     var starkImage: UIImage!
     var lannisterImage : UIImage!
     
@@ -29,7 +33,7 @@ class PersonTest: XCTestCase {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
         starkSigil = Sigil(image: #imageLiteral(resourceName: "codeIsComing.png"), description:"Direwolf")
-        starkHouse = House(name: "Stark", sigil:starkSigil, words: "Winter is coming")
+        starkHouse = House(name: "Stark", sigil:starkSigil, words: "Winter is coming", url: starkURL)
         
         ned = Person(name: "Eddard", alias:"Ned", house :starkHouse)
         
@@ -40,8 +44,8 @@ class PersonTest: XCTestCase {
         starkSigil = Sigil(image: starkImage, description: "Direwolf")
         lannisterSigil = Sigil(image: lannisterImage, description: "Rampant Lions")
         
-        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming")
-        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!")
+        starkHouse = House(name: "Stark", sigil: starkSigil, words: "Winter is coming", url: starkURL)
+        lannisterHouse = House(name: "Lannister", sigil: lannisterSigil, words: "Hear me roar!", url: lannisterURL)
         
         robb = Person (name: "Robb", alias: "The young wolf", house:starkHouse)
         arya = Person (name: "Arya", house: starkHouse)
