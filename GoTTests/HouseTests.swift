@@ -44,7 +44,7 @@ class HouseTests: XCTestCase {
     func testAddPersons(){
         XCTAssertEqual(starkHouse.count,2)
         
-        XCTAssertEqual(lannisterHouse.count,2)
+        XCTAssertEqual(lannisterHouse.count,4)
     }
     
     func testHouseEquality(){

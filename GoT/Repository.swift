@@ -15,10 +15,21 @@ final class Repository{
 
 protocol HouseFactory {
     
+    typealias Filter = (House)->Bool
+    
     var houses : [House] {get}
-}
+    func house(named: String)->House?
+    func houses(filteredBy: Filter) -> [House]
+    
+  }
 
 final class LocalFactory : HouseFactory {
+    
+    func houses(filteredBy: Filter) -> [House] {
+        let filtered = Repository.local.houses.filter(filteredBy)
+        return filtered
+    }
+
     var houses: [House]{
         get {
             //Aqui es donde creas casas
@@ -42,16 +53,11 @@ final class LocalFactory : HouseFactory {
             
             // Refactorizamos para que se añadan automaticamenente
             // Añadir los personajes a las casas
-            stark.add(person: robb)
-            stark.add(person: arya)
-            lannister.add(person: tyrion)
-            lannister.add(person: cersei)
-            lannister.add(person: jaime)
-            lannister.add(person: tywin)
-            targaryen.add(person: khaleesi)
-            targaryen.add(person: viserys)
+            stark.add(persons: robb, arya)
+            lannister.add(persons: tyrion, cersei, jaime, tywin)
+            targaryen.add(persons: khaleesi, viserys)
             
-            return [stark, lannister].sorted()
+            return [stark, lannister, targaryen].sorted()
         }
     }
     
@@ -65,12 +71,11 @@ extension HouseFactory {
           return house
     }
     
-extension HouseFactory{
+/*extension HouseFactory{
     func house(_ filterBy: filter) -> House? {
         house = house.filter({filter}).first
     })
-
-    }
+    }*/
     
     
     
