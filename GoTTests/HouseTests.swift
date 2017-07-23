@@ -16,9 +16,9 @@ class HouseTests: XCTestCase {
     var starkHouse : House!
     var lannisterHouse : House!
     
-    let starkURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
-    let lannisterURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Lannister")!
-    let targaryenURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Targaryen")!
+    let starkURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Stark")!
+    let lannisterURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Lannister")!
+    let targaryenURL = URL(string: "https://awoiaf.westeros.org/index.php/House_Targaryen")!
     
 
     override func setUp() {

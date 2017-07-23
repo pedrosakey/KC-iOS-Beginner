@@ -29,6 +29,28 @@ class HouseViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupUI(){
+        //Creamos un botón a la barra del navigation controller
+        let wiki = UIBarButtonItem(title: "Wiki",
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(displayWiki))
+        //Añadimos
+        navigationItem.rightBarButtonItem = wiki
+        
+    }
+    
+    @objc func displayWiki(){
+        
+        // Creams un wikiVC
+        let wikiVC = WikiViewController(model: model)
+        
+        // Lo cargamos en el navigation
+        navigationController?.pushViewController(wikiVC,
+                                                 animated: true)
+        
+    }
+    
     func syncViewWithModel(){
         // model --> View
         houseNameView.text = "House \(model.name)"
@@ -39,6 +61,8 @@ class HouseViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        setupUI()
         
         syncViewWithModel()
     }

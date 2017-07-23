@@ -22,6 +22,8 @@
 		CF2B98FE1F1AE89100041255 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98FD1F1AE89100041255 /* RepositoryTests.swift */; };
 		CF2B99001F1AEA4D00041255 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98FF1F1AEA4D00041255 /* Repository.swift */; };
 		CF4BB3FE1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */; };
+		CF4BB4011F243358008C0E47 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */; };
+		CF4BB4021F243358008C0E47 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB4001F243358008C0E47 /* WikiViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		CF2B98FD1F1AE89100041255 /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		CF2B98FF1F1AEA4D00041255 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Casa_Targaryen_estandarte.png; sourceTree = "<group>"; };
+		CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
+		CF4BB4001F243358008C0E47 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,8 @@
 			children = (
 				CF2B98F31F19181B00041255 /* HouseViewController.swift */,
 				CF2B98F41F19181B00041255 /* HouseViewController.xib */,
+				CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */,
+				CF4BB4001F243358008C0E47 /* WikiViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -239,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF2B98F21F190EB500041255 /* lannister.jpg in Resources */,
+				CF4BB4021F243358008C0E47 /* WikiViewController.xib in Resources */,
 				CF2B98F11F190EB500041255 /* codeIsComing.png in Resources */,
 				CF4BB3FE1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png in Resources */,
 				CF2B98F61F19181B00041255 /* HouseViewController.xib in Resources */,
@@ -267,6 +274,7 @@
 				CF2B98C81F190BF000041255 /* AppDelegate.swift in Sources */,
 				CF2B98F51F19181B00041255 /* HouseViewController.swift in Sources */,
 				CF2B99001F1AEA4D00041255 /* Repository.swift in Sources */,
+				CF4BB4011F243358008C0E47 /* WikiViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
