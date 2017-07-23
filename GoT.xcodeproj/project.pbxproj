@@ -21,6 +21,7 @@
 		CF2B98FA1F1AE4DC00041255 /* UIkitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */; };
 		CF2B98FE1F1AE89100041255 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98FD1F1AE89100041255 /* RepositoryTests.swift */; };
 		CF2B99001F1AEA4D00041255 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98FF1F1AEA4D00041255 /* Repository.swift */; };
+		CF4BB3FE1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIkitExtensions.swift; sourceTree = "<group>"; };
 		CF2B98FD1F1AE89100041255 /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		CF2B98FF1F1AEA4D00041255 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Casa_Targaryen_estandarte.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		CF2B98EE1F190E1700041255 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */,
 				CF2B98EF1F190EB500041255 /* codeIsComing.png */,
 				CF2B98F01F190EB500041255 /* lannister.jpg */,
 			);
@@ -237,6 +240,7 @@
 			files = (
 				CF2B98F21F190EB500041255 /* lannister.jpg in Resources */,
 				CF2B98F11F190EB500041255 /* codeIsComing.png in Resources */,
+				CF4BB3FE1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png in Resources */,
 				CF2B98F61F19181B00041255 /* HouseViewController.xib in Resources */,
 				CF2B98D21F190BF000041255 /* LaunchScreen.storyboard in Resources */,
 				CF2B98CF1F190BF000041255 /* Assets.xcassets in Resources */,
@@ -464,6 +468,7 @@
 				CF2B98E31F190BF000041255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF2B98E41F190BF000041255 /* Build configuration list for PBXNativeTarget "GoTTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +477,7 @@
 				CF2B98E61F190BF000041255 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

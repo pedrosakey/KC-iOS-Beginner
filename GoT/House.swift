@@ -1,6 +1,6 @@
 //
 //  House.swift
-//  Westeros
+//  GoT
 //
 //  Created by Pedro Sánchez Castro on 6/7/17.
 //  Copyright © 2017 Pedro Sánchez Castro. All rights reserved.
@@ -49,12 +49,18 @@ extension House{
         }
         _members.insert(person)
     }
+    //funcion varíadica la función se implenta en varios parámetros [jaime, khalessi]
+    func add(persons: Person...){
+        for person in persons{
+            add(person: person)
+        }
+    }
 }
 
 extension House{
     var proxyForEquality : String{
         get{
-            return "\(name) \(words) \(count)"
+            return "\(name) \(words)"
         }
     }
     

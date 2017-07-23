@@ -46,7 +46,7 @@ class PersonTest: XCTestCase {
         robb = Person (name: "Robb", alias: "The young wolf", house:starkHouse)
         arya = Person (name: "Arya", house: starkHouse)
         tyrion = Person(name: "Tyrion", alias: "The Imp", house: lannisterHouse)
-        
+
     }
     
     override func tearDown() {
