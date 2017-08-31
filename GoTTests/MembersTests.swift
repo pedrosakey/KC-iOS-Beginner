@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import GoT
-class PersonTest: XCTestCase {
+class MembersTest: XCTestCase {
     
     let starkURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Stark")!
     let lannisterURL = URL(string: "http://awoiaf.westeros.org/index.php/House_Lannister")!
