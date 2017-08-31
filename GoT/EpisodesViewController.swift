@@ -52,4 +52,14 @@ class EpisodesViewController: UITableViewController {
         return cell!
     }
     
+    
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Averiguar episode
+        let episode: Episode = model[indexPath.row]
+        
+        // Mostrar episodios
+        let episodeVC = EpisodeViewController(model: episode )
+        navigationController?.pushViewController(episodeVC, animated: true)
+    }
 }
