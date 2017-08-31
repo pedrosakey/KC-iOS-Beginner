@@ -50,6 +50,7 @@ extension House{
         }
         _members.insert(person)
     }
+    
     //funcion varíadica la función se implenta en varios parámetros [jaime, khalessi]
     func add(persons: Person...){
         for person in persons{

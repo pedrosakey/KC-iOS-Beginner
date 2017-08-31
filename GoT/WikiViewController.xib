@@ -21,23 +21,26 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I2Q-L0-BhG">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-w6-Dh0">
+                    <rect key="frame" x="20" y="20" width="335" height="627"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </webView>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-w6-Dh0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </webView>
-                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-Js-Yg7">
-                    <rect key="frame" x="169" y="315" width="37" height="37"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="RVc-Js-Yg7">
+                    <rect key="frame" x="20" y="20" width="335" height="627"/>
                     <color key="color" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RVc-Js-Yg7" secondAttribute="trailing" constant="20" symbolic="YES" id="79x-P0-QM3"/>
+                <constraint firstItem="RVc-Js-Yg7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="J8s-9H-z0c"/>
+                <constraint firstItem="p2V-w6-Dh0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" symbolic="YES" id="JzU-r3-5lf"/>
+                <constraint firstAttribute="bottom" secondItem="RVc-Js-Yg7" secondAttribute="bottom" constant="20" symbolic="YES" id="NmE-QD-diw"/>
+                <constraint firstAttribute="bottom" secondItem="p2V-w6-Dh0" secondAttribute="bottom" constant="20" symbolic="YES" id="SBV-ua-t8J"/>
+                <constraint firstItem="RVc-Js-Yg7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="UvX-is-hqv"/>
+                <constraint firstAttribute="trailing" secondItem="p2V-w6-Dh0" secondAttribute="trailing" constant="20" symbolic="YES" id="fgF-ZC-5z1"/>
+                <constraint firstItem="p2V-w6-Dh0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="kUJ-Fh-92T"/>
+            </constraints>
             <point key="canvasLocation" x="11.5" y="2.5"/>
         </view>
     </objects>

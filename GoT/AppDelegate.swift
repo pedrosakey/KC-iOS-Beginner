@@ -17,20 +17,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Crear window
+      
+        
+        // Models
+        let houses = Repository.local.houses
+        let seasons = Repository.local.seasons
+        
+        // Controllers
+        let housesVC = HousesViewController(model: houses).wrappedInNavigation()
+        let seasonsVC = SeasonsViewController(model: seasons).wrappedInNavigation()
+     
+        // RootVC
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = [housesVC, seasonsVC]
+
+        
+        // Window
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.backgroundColor = UIColor.cyan
         
-        // Creamos unos modelos
-        let houses = Repository.local.houses
-        
-        // Creamos la tabla
-        let housesVC = HousesViewController(model: houses).wrappedInNavigation()
-        
-        // Asignamos el RootVC
-        window?.rootViewController = housesVC
-        
+        // RootVC
+        window?.rootViewController = tabVC
         return true
     }
 
