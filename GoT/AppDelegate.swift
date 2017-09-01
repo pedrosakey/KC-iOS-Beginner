@@ -24,8 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let seasons = Repository.local.seasons
         
         // Controllers
-        let housesVC = HousesViewController(model: houses).wrappedInNavigation()
-        let seasonsVC = SeasonsViewController(model: seasons).wrappedInNavigation()
+        let housesDataSource = DataSources.housesDataSource(model: houses)
+        let housesVC = ArrayTableViewController(dataSource: housesDataSource, title: "Houses", style: .plain, delegate: GreatHousesDelegate()).wrappedInNavigation()
+        
+        
+        let seasonsDataSource = DataSources.seasonsDataSource(model: seasons)
+        let seasonsVC = ArrayTableViewController(dataSource: seasonsDataSource, title: "Seasons", style: .plain, delegate: SeasonsDelegate()).wrappedInNavigation()
      
         // RootVC
         let tabVC = UITabBarController()
