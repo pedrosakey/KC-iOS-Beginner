@@ -26,6 +26,8 @@
 		CF2B98FA1F1AE4DC00041255 /* UIkitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */; };
 		CF2B98FE1F1AE89100041255 /* RepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98FD1F1AE89100041255 /* RepositoryTests.swift */; };
 		CF2B99001F1AEA4D00041255 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2B98FF1F1AEA4D00041255 /* Repository.swift */; };
+		CF2DE8F81F5B0320002333ED /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2DE8F61F5B0320002333ED /* CustomTableViewCell.swift */; };
+		CF2DE8F91F5B0320002333ED /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF2DE8F71F5B0320002333ED /* CustomTableViewCell.xib */; };
 		CF4BB3FE1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */; };
 		CF4BB4011F243358008C0E47 /* WikiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */; };
 		CF4BB4021F243358008C0E47 /* WikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF4BB4001F243358008C0E47 /* WikiViewController.xib */; };
@@ -77,6 +79,8 @@
 		CF2B98F91F1AE4DC00041255 /* UIkitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIkitExtensions.swift; sourceTree = "<group>"; };
 		CF2B98FD1F1AE89100041255 /* RepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryTests.swift; sourceTree = "<group>"; };
 		CF2B98FF1F1AEA4D00041255 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		CF2DE8F61F5B0320002333ED /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		CF2DE8F71F5B0320002333ED /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		CF4BB3FD1F23E2F9008C0E47 /* Casa_Targaryen_estandarte.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Casa_Targaryen_estandarte.png; sourceTree = "<group>"; };
 		CF4BB3FF1F243358008C0E47 /* WikiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WikiViewController.swift; sourceTree = "<group>"; };
 		CF4BB4001F243358008C0E47 /* WikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WikiViewController.xib; sourceTree = "<group>"; };
@@ -189,6 +193,8 @@
 				CF4BB40C1F252284008C0E47 /* MembersViewController.xib */,
 				CFC615ED1F58983600093E2A /* EpisodeViewController.swift */,
 				CFC615EE1F58983600093E2A /* EpisodeViewController.xib */,
+				CF2DE8F61F5B0320002333ED /* CustomTableViewCell.swift */,
+				CF2DE8F71F5B0320002333ED /* CustomTableViewCell.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2DE8F91F5B0320002333ED /* CustomTableViewCell.xib in Resources */,
 				CF2B98F21F190EB500041255 /* lannister.jpg in Resources */,
 				CF4BB4021F243358008C0E47 /* WikiViewController.xib in Resources */,
 				CF2B98F11F190EB500041255 /* codeIsComing.png in Resources */,
@@ -330,6 +337,7 @@
 			files = (
 				CF4BB40D1F252284008C0E47 /* MembersViewController.swift in Sources */,
 				CF2B98ED1F190E0500041255 /* Person.swift in Sources */,
+				CF2DE8F81F5B0320002333ED /* CustomTableViewCell.swift in Sources */,
 				CF5AEDEB1F4F26800047C544 /* Season.swift in Sources */,
 				CF2B98FA1F1AE4DC00041255 /* UIkitExtensions.swift in Sources */,
 				CFC615EF1F58983600093E2A /* EpisodeViewController.swift in Sources */,

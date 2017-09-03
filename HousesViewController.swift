@@ -12,6 +12,15 @@ class HousesViewController: UITableViewController {
         
     let model : [House]
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
+    }
+    
     init(model : [House]){
         self.model = model
         super.init(nibName: nil, bundle: nil)
@@ -38,21 +47,15 @@ class HousesViewController: UITableViewController {
     
     override func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cellID = "HouseCell"
         // Descubrir cual es la casa que queremos mostrar
         let house = model[indexPath.row]
-        
         // Crear una celda
-        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         
-        // Sincronizar House -> Cell
-        cell?.imageView?.image = house.sigil.image
-        cell?.textLabel?.text = house.name
+        cell.houseImage.image = house.sigil.image
+        cell.houseNameLabel.text = house.name
         
-        return cell!
+        return cell
         
     }
     
