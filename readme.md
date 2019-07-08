@@ -143,5 +143,180 @@ Define model
 ![Create Model AppDelegate to UIViewController](https://drive.google.com/uc?id=11ffiV-T27X3mvWahRtN8WR2vrNA6i7iO)
 
 
+## Tab bar Controller with 2 UINavigationController
+
+```
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        
+        // Crear window
+ 	 ...        
+        // Creamos unos modelos
+ 	 ...        
+        // Creamos los controladores
+        let starkVC = HouseViewController(model: starkHouse)
+        let lannisterVC = HouseViewController(model: lannisterHouse)
+        
+        // Creamos los Navigations
+        let starkNav = UINavigationController(rootViewController: starkVC)
+        let lannisterNav = UINavigationController(rootViewController: lannisterVC)
+        
+        // Creamos el TabBar
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = [lannisterNav, starkNav]
+        
+        // Asignamos el RootVC
+        window?.rootViewController = tabVC
+        
+        return true
+    }
+
+```
+
+## Wrapper UIViewController in NavigationController
+
+
+```
+import UIKit
+
+extension UIViewController{
+    
+    func wrappedInNavigation() -> UINavigationController{
+        let nav = UINavigationController(rootViewController: self)
+        return nav
+    }
+    
+}
+
+```
+Ejemplo de uso
+```
+// Creamos el TabBar
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = [lannisterVC.wrappedInNavigation(), starkVC.wrappedInNavigation()]
+
+```
+
+## Repository
+
+
+```
+import Foundation
+
+final class Repository{
+    
+    static let local = LocalFactory()
+}
+
+protocol HouseFactory {
+    
+    var houses : [House] {get}
+}
+
+final class LocalFactory : HouseFactory {
+    var houses: [House]{
+        get {
+            //Aqui es donde creas casas
+          ...
+                
+            // Añadir los personajes a las casas
+          ...
+      
+            return [stark, lannister].sorted()
+        }
+    }
+    
+}
+
+```
+
+_Example of use_
+
+**AppDelegate: didFinishLaunchingWithOptions**
+
+```
+// Creamos unos modelos
+        let houses = Repository.local.houses
+        
+        // Creamos los controladores
+        var controllers = [HouseViewController]()
+        for house in houses{
+            controllers.append(HouseViewController(model: house))
+        }
+        
+        // Creamos los navigation controllers
+        var navs = [UINavigationController]()
+        for controller in controllers{
+            navs.append(UINavigationController(rootViewController: controller))
+        }
+
+        // Creamos el TabBar
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = navs
+
+```        
+##  Repositorio  using UIKIT Extensión
+
+##  Refactoring with MAP
+
+```
+// Creamos el TabBar
+        let tabVC = UITabBarController()
+        tabVC.viewControllers = houses.map {HouseViewController(model: $0).wrappedInNavigation()}
+
+```
+
+> Now the app return House that can came from networks u other sources
+
+## Improve Repository
+
+import Foundation
+
+final class Repository{
+    
+    static let local = LocalFactory()
+}
+
+```
+protocol HouseFactory {
+    
+    typealias Filter = (House)->Bool
+    
+    var houses : [House] {get}
+    func house(named: String)->House?
+    func houses(filteredBy: Filter) -> [House]
+    
+  }
+
+final class LocalFactory : HouseFactory {
+    
+    func houses(filteredBy: Filter) -> [House] {
+        let filtered = Repository.local.houses.filter(filteredBy)
+        return filtered
+    }
+
+    var houses: [House]{
+        get {
+            //Aqui es donde creas casas
+	...
+                 // Refactorizamos para que se añadan automaticamenente
+            // Añadir los personajes a las casas
+                       return [stark, lannister, targaryen].sorted()
+	...
+        }
+    }
+    
+}
+
+extension HouseFactory {
+    
+    func house(named : String) -> House? {
+        var house : House?
+        house = houses.filter({$0.name == named}).first
+          return house
+}
+
+```
+
 
 # ToDo
