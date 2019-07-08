@@ -87,6 +87,61 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ```
 
+## First Controller and AppDelegate
+
+### Comparable
+
+```
+extension House{
+      
+    var proxyForComparison : String{
+        get{
+            return name //aqui antes de comparar creas una representacion normalizada
+            // pasar a mayusculas, etc.
+        }
+    }
+}
+
+//MARK: - Comparable
+extension House : Comparable{
+    //menor compilador
+    //mayor o igual - menor o igual equatable
+    static func <(lhs: House, rhs: House) -> Bool {
+        return lhs.proxyForComparison < rhs.proxyForComparison
+    }
+}
+
+```
+
+### Typealias
+
+```
+typealias Words = String
+typealias Members = Set<Person>
+```
+
+- Create UIViewcontroller + .xib 
+Define model
+
+- syncviewwithmodel when controller appears
+
+- AppDelegate - didFinishLaunchingWithOptions
+
+```
+ // Creamos un modelo
+        let starkSigil = Sigil(image:  imageLiteral(resourceName: "codeIsComing.png"), description: "Direwolf")
+        let starkHouse = House(name: "Stark", sigil: starkSigil, words: "Code is coming!")
+        
+        // Creamos el controlador
+        let starkVC = HouseViewController(model: starkHouse)
+        
+        // Asignamos el RootVC
+        window?.rootViewController = starkVC
+
+```
+
+![Create Model AppDelegate to UIViewController](https://drive.google.com/uc?id=11ffiV-T27X3mvWahRtN8WR2vrNA6i7iO)
+
 
 
 # ToDo
