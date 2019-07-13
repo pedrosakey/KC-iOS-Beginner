@@ -319,4 +319,149 @@ extension HouseFactory {
 ```
 
 
+
+
+
+
+
+##  WikiViewController
+
+**Internet Info**
+
+**ActivityView**
+
+```
+import UIKit
+
+class WikiViewController: UIViewController {
+
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
+    @IBOutlet weak var browserView: UIWebView!
+    let model : House
+    
+    init(model: House){
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func syncViewWithModel(){
+        
+        activityView.isHidden = false
+        activityView.startAnimating()
+        title = model.name
+        browserView.delegate = self
+        browserView.loadRequest(URLRequest(url: model.wikiURL))
+        
+    }
+
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        syncViewWithModel()
+    }
+    
+}
+
+extension WikiViewController : UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+    
+        activityView.stopAnimating()
+        activityView.isHidden = true
+    
+    }
+    
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if (navigationType == .linkClicked) ||
+            (navigationType == .formSubmitted){
+            return false
+        }else{
+            return true
+        }
+    }
+    
+}
+
+```
+
+![Set up UI Flow](https://drive.google.com/uc?id=11iBn-UK8XDNNjTawLkJDs5Rand7r8VTU)
+
+> setupUI: We add UIBarButtom with code not in xib
+
+## Table View, Data Souce + Delegate
+
+```
+import UIKit
+
+class HousesViewController: UITableViewController {
+        
+    let model : [House]
+    
+    init(model : [House]){
+        self.model = model
+        super.init(nibName: nil, bundle: nil)
+        
+        title = "Westeros"
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return model.count
+    }
+    
+    override func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cellID = "HouseCell"
+        // Descubrir cual es la casa que queremos mostrar
+        let house = model[indexPath.row]
+        
+        // Crear una celda
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellID)
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellID)
+        }
+        
+        // Sincronizar House -> Cell
+        cell?.imageView?.image = house.sigil.image
+        cell?.textLabel?.text = house.name
+        
+        return cell!
+        
+    }
+    
+    // MARK: - Table view delegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Averiguar casa
+        let house = model[indexPath.row]
+        
+        // Mostrar casa
+        let houseVC = HouseViewController(model: house)
+        navigationController?.pushViewController(houseVC, animated: true)
+    }
+    
+}
+
+```
+##  Table View for people
+
+##  Controllers genéricos.
+
+
 # ToDo
